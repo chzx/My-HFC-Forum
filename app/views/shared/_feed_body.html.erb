@@ -1,0 +1,168 @@
+<% if flash[:notice].present? %>
+  <div class= "alert alert-danger"><%= flash[:notice] %></div>
+<% end %>
+
+<h1>Got some news to share?, <%= current_user.try(:email) %>?
+
+  <div class = "pull-right">
+    <a href="#" class = "close-box glyphicon glyphicon-chevron-up">
+    </a>
+  </div>
+
+</h1>
+<br>
+
+
+<!--  <img src="<%= image_url 'close.png' %>" class="img-responsive pull-right close-box"> -->
+
+
+<%= form_for @post do |f| %>
+  <div class="row subheader">
+    <div class="col-md-2">
+      <%= f.select :category,
+          options_for_select(['Announcement', 'Jobs', 'Question']),{:prompt=>'Select Post Type'},
+          {:class=>'form-control selectposttype'} %>
+    </div>
+
+    <div class="col-md-8 form-group">
+      <label for="conversation_post"></label>
+      <%= f.text_area :content, :class=> 'form-control enterpost', :placeholder=>'Enter Post...' %>
+    </div>
+    <div class="col-md-2">
+      <%= f.submit 'Submit', :class=>'btn btn-primary btn-block' %>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+<div class="row filtersrow ">
+  <div class="col-md-3 vertical_border">
+    <%= link_to posts_path, :class=>'subnav allposts' do %>
+           <%= image_tag 'subnav_allposts.png' %>
+           All Posts
+         <% end %>
+  </div>
+
+  <div class="col-md-3 vertical_border">
+  <!--  <%= link_to 'Questions', posts_path(:category=>'Question') %> -->
+    <!-- <a href="/?category=question"><p class="filtertext question">Questions</p></a> -->
+      <%= link_to posts_path(:category=>'Question'), :class=>'subnav questions' do %>
+            <%= image_tag 'subnav_question.png' %>
+            Questions
+          <% end %>
+  </div>
+
+
+  <div class="col-md-3 vertical_border">
+  <!--  <a href="/?category=jobs"><p class="filtertext jobs">Jobs Posts</p></a> -->
+    <%= link_to posts_path(:category=>'Jobs'), :class=>'subnav jobs' do %>
+            <%= image_tag 'subnav_jobs.png' %>
+            Job Posts
+          <% end %>
+  </div>
+
+
+  <div class="col-md-3 stupidannouncementsbox">
+  <!--  <a href="/?category=announcement"><p class="filtertext announcements">Announcements</p></a> -->
+  <%= link_to posts_path(:category=>'Announcement'), :class=>'subnav announcements last' do %>
+            <%= image_tag 'subnav_announcements.png' %>
+            Announcements
+          <% end %>
+  </div>
+</div>
+
+
+<div class="feed-posts">
+  <% @posts.each do |bumblebee| %>
+    <%= render partial: 'post', locals: {post: bumblebee} %>
+  <% end%>
+
+
+
+<!--<% 3.times do %>
+
+<div class="row normal_bg">
+<div class="col-md-2">
+<img src="<%= image_url 'post_icon_questions.png' %>" class="img-responsive icon_questions center-block">
+</div>
+  <div class="col-md-9 user_post">
+<br>
+    <h5 class= "user_name" display:"inline">Sandra S.   <h7 class="date">// Aug 5, 2014 @  3:14PM</h7></h5>
+<br>
+      <p>Sed et hendrerit ante. Praesent in ligula maximus, aliquam quam at, mattis tortor. Etiam quis nulla neque. Fusce vel elementum velit. Ut pharetra maximus velit, id facilisis mi iaculis interdum. Aliquam pretium fringilla est, eget vehicula purus efficitur nec.</p>
+<br><br>
+  </div>
+      <div class="col-md-1">
+          <img src="<%= image_url 'like_inactive.png' %>" class="img-responsive center-block like_button">
+      </div>
+</div>
+
+
+
+<div class="row orange">
+  <div class="col-md-2 ">
+    <div class="arrow-up"></div>
+    <img src="<%= image_url 'notice.png' %>" class="img-responsive center-block notice">
+  </div>
+
+      <div class="col-md-9 form-group">
+        <label for="conversation_post"></label>
+          <input type="textbox" class="form-control addconvo" height="30px" id="conversation_post" placeholder="Add to the conversation..."></input>
+      </div>
+            <div class="col-md-1">
+              <input type="submit" value="Submit" class=" center-block submit">
+            </div>
+</div>
+
+
+
+<div class="row user_comment normal_bg">
+<br>
+  <div class="col-md-2">
+    <img src="http://placehold.it/70x70" class="img-responsive center-block avatar"/>
+  </div>
+      <div class="col-md-9">
+        <h5 class= "user_name" display:"inline">Brian M.   <h7 class="date">// Aug 5, 2014 @  3:14PM</h7></h5>
+<br>
+        <p>Sed et hendrerit ante. Praesent in ligula maximus, aliquam quam at, mattis tortor. Etiam quis nulla neque. Fusce vel elementum velit.</p>
+<br>
+    </div>
+</div>
+
+<div class= "gray_borders">
+</div>
+
+
+<% end %> -->
+
+</div>
+<!--
+<div class="container-fluid page_controls">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="text-center">
+
+    <    <ul class="pagination">
+          <li class="previous"><a href="#">Prev</a></li>
+          <li><a href="#">1</a></li>
+          <li class="active"><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li class="next"><a href="#">Next</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+<div class="container-fluid page_controls">
+  <div class 'row pagination'>
+    <div class='col-md-12 text-center'>
+      <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

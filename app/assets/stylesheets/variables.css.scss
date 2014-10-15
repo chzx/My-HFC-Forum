@@ -1,0 +1,72 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,700,300,600);
+
+$font-family-sans-serif: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$salmon: #EF645A;
+$light-salmon: #F2837B;
+$steel-gray: #768994;
+$light-steel-gray: #91A1A9;
+$dark-steel-gray: #4B5B6B;
+$almost-white: #F6F7F7;
+$neutral-gray: #CCCCCC;
+
+$yellow: #F5AD3B;
+$light-yellow: #FFEAD8;
+$lighter-yellow: #FFEEE0;
+$lightest-yellow: #FFFBF8;
+
+$green: #50D494;
+$light-green: #CFECDC;
+$lighter-green: #D9F0E5;
+$lightest-green: #EDFCF5;
+
+$blue: #53C6F1;
+$light-blue: #CCF1FF;
+$lighter-blue: #D6F4FF;
+$lightest-blue: #EDFAFF;
+
+
+$brand-primary: $salmon;
+$link-color: $steel-gray;
+
+
+
+$border-radius-base: 10px;
+$border-radius-large: 12px;
+$border-radius-small: 7px;
+
+$gray-darker: $dark-steel-gray;
+$gray-dark: $dark-steel-gray;
+$gray: $steel-gray;
+$gray-light: $steel-gray;
+$gray-lighter: $steel-gray;
+
+
+$primary-color: $salmon;
+$secondary-color: $steel-gray;
+$body-bg: $almost-white;
+$text-color: $dark-steel-gray;
+
+$padding-base-vertical: 7px;
+$padding-base-horizontal: 16px;
+
+
+$footer-height: 160px;
+$footer-bg: $almost-white;
+$footer-border-top: #bec6ca;
+$footer-color: #64717f;
+
+$headings-color: $text-color;
+$headings-font-weight: 300;
+
+$carat-size: 15px;
+
+$pagination-color: $dark-steel-gray;
+$pagination-bg: transparent;
+$pagination-border: none;
+$pagination-hover-color: $almost-white;
+$pagination-hover-bg: transparent;
+$pagination-hover-border: none;
+$pagination-active-color: $almost-white;
+$pagination-active-bg: transparent;
+$pagination-active-border: none;

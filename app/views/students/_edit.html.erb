@@ -1,0 +1,48 @@
+<div class = 'row profileheader'>
+  <div class = 'col-md-3'>
+    <img src ="http://placehold.it/400x400" class="img-responsive profile_img"/>
+  </div>
+      <div class = 'col-md-7'>
+        <br><br><br>
+        <%= form_for current_user, :url=>update_profile_path, :method=>:post do |f| %><!-- must get rid of .new here -->
+          <div class = 'col-md-12 form-group'>
+            <%= f.text_field :first_name, :class=> 'enterpost profpagetext editnamemargin', :placeholder=>'First Name' %>
+            <%= f.text_field :last_name, :class=> 'enterpost profpagetext editnamemargin', :placeholder=>'Last Name' %>
+            <br>
+          </div>
+      </div>
+</div>
+            <div class = 'row profilebody'>
+              <div class = 'col-md-10 col-md-offset-1'>
+                <h1 class = 'profpagetext'> About me </h1>
+                <br>
+                <%= f.text_area :bio, :class=> 'profpagetext paragraph biobody form-control', :placeholder=>'Your bio here...', :rows=>8 %>
+
+                <br><br>
+                <h1 class = 'profpagetext'> Professional Interests </h1>
+                <br>
+                <%= f.text_area :professional_interests, :class=> 'profpagetext paragraph biobody form-control', :placeholder=>'Your pro interests here...', :rows=>6 %>
+                <br><br>
+                <%= f.text_field :github_url, :class=> 'form-control enterpost biobody profpagetext github', :placeholder=>'Your Github' %>
+                <br>
+                <%= f.text_field :skype, :class=> 'form-control enterpost biobody profpagetext skype', :placeholder=>'Your Skype' %>
+                <br>
+                <%= f.text_field :email, :class=> 'form-control enterpost biobody profpagetext email', :placeholder=>'Your Email' %>
+                <br>
+                <%= f.text_field :twitter_url, :class=> 'form-control enterpost biobody profpagetext twitter', :placeholder=>'Your Twitter' %>
+                <br>
+                <%= f.text_field :website_url, :class=> 'form-control enterpost biobody profpagetext website', :placeholder=>'Your Website' %>
+                <br>
+              </div>
+            </div>
+            <div class= 'row'>
+              <div class= 'col-md-12 text-center cancelandsubmit'>
+
+           <a href="#" onclick="history.go(-2)">Cancel</a>
+                <%= link_to 'Cancel', profile_path, :class=> 'stupidcancellink profpagetext' %>
+                <%= f.submit 'Save', :class=> 'form-control btn btn-default editsubmitbtn' %>
+
+              </div>
+            </div>
+          <% end %>
+        <%= render partial: 'shared/footer' %>

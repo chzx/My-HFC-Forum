@@ -1,0 +1,18 @@
+
+  <div class="row user_comment normal_bg">
+    <br>
+    <div class="col-md-2">
+      <img src="http://placehold.it/50x50" class="img-responsive center-block avatar"/>
+    </div>
+    <div class="col-md-9">
+      <span class="author">
+      <%= comment.user.first_name %> <%=comment.user.last_name %>
+      </span>
+      <span class="time">// <%= comment.created_at.to_s %>
+      </span>
+      <br><br>
+      <p class="comment-content">
+        <%= comment.content %>
+      </p>
+    </div>
+  </div>

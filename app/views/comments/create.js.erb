@@ -1,0 +1,2 @@
+alert('hello!!');
+$('#comments-for-post-<%= @post.id %>').append("<%= escape_javascript(render :partial=>'comments/comments', :locals=>{:comment=>@comment, post: @post}) %>");

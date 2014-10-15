@@ -1,0 +1,83 @@
+
+<%- klass=nil %>
+<% if (post.likes.where(user_id:current_user.id).count > 0) %>
+  <%- klass="liked" %>
+  <%end%>
+
+<div class="row normal_bg feed-post <%= post.category.downcase %> <%= klass %>" id="post-<%= post.id %>">
+
+    <div class="col-md-2">
+      <% if post.category == 'Question'%>
+      <img src="<%= image_url 'post_icon_questions.png' %>" class="img-responsive icon_questions center-block">
+        <% elsif post.category =='Jobs' %>
+        <img src="<%= image_url 'post_icon_jobs.png' %>" class="img-responsive icon_jobs center-block">
+        <% elsif post.category =='Announcement' %>
+        <img src="<%= image_url 'post_icon_announcement.png' %>" class="img-responsive icon_announcement center-block">
+      <% end %>
+    </div>
+
+
+      <div class="col-md-9 user_post">
+        <br>
+          <!--<h5 class= "user_name" display:"inline">Sandra S. -->
+        <div class="byline">
+          <span class="author">  Sandra S. </span>
+          <span class="time">// <%= post.created_at %> </span>
+        </div>
+        <%= post.created_at %>
+        <!--<h7 class="date">// Aug 5, 2014 @  3:14PM</h7></h5> -->
+
+        <p class= "post-content">
+          <%= post.content %>
+        </p>
+        <br>
+
+      </div>
+      <div class="col-md-1">
+        <%= button_to 'Like', like_post_path(post), :class=> 'btn-like', :remote=>true %>
+  <!-- <img src="<%= image_url 'like_inactive.png' %>" class="img-responsive center-block like_button"> -->
+      </div>
+</div>
+
+
+
+      <div class="row orange">
+
+  <!--  #does this work?     <div class="row <%= post.category.downcase %>">
+          <% if post.category == 'Question'%>
+            <body bgcolor="orange">
+              <% elsif post.category =='Jobs' %>
+                <body bgcolor="#E0E0E0">
+                <% elsif post.category =='Announcement' %>
+                  <body bgcolor="blue;">
+                    <% end %>
+                  -->
+
+      <%= form_for [post,Comment.new], :remote=>true do |f| %>
+        <div class="col-md-2 ">
+          <div class="arrow-up">
+          </div>
+          <img src="<%= image_url 'notice.png' %>" class="img-responsive center-block notice">
+        </div>
+
+        <div class="col-md-8 form-group">
+          <label for="conversation_post"></label>
+           <%= f.text_area :content, :class=>'form-control lrg addconvo', :placeholder=>'Add to the conversation' %>
+     <!--  <input type="textbox" class="form-control addconvo" height="30px" id="conversation_post" placeholder="Add to the conversation..."></input>     -->
+        </div>
+
+        <div class="col-md-2">
+          <%= f.submit 'Submit', :class=>"btn btn-secondary center-block submit" %>
+  <!--    <input type="submit" value="Submit" class=" center-block submit"> -->
+        </div>
+      </div>
+    <% end %>
+
+  <div id="comments-for-post-<%= post.id %>">
+    <% post.comments.each do |comment| %>
+      <%= render :partial=>'comments/comments', :locals=>{:comment=>comment, post: post} %>
+    <% end %>
+  </div>
+
+      <div class= "gray_borders">
+      </div>

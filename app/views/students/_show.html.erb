@@ -1,0 +1,52 @@
+<div class = 'row profileheader'>
+  <div class = 'col-md-3'>
+    <img src ="http://placehold.it/400x400" class="img-responsive profile_img"/>
+  </div>
+      <div class = 'col-md-5'>
+        <br><br>
+          <div class = 'row display: inline'>
+            <h1 class = 'profpagetext'>
+              <%= @student.first_name %> <%= @student.last_name %>
+                <% if @can_edit %>
+                <%= link_to edit_profile_path do %>
+                <img src ="<%=image_url('edit_icon.png')%>" class="display: inline editbtn">
+                <% end %>
+              <% end %>
+            </h1>
+            <br>
+          </div>
+
+            <div class = "row">
+              <div class= "col-md-11 rowofsociallogos">
+                <div class="col-md-1 social-logo-container">
+                  <img src ="<%=image_url('social_email.png')%>" class="display: inline ">
+                </div>
+                <div class="col-md-1 col-md-offset-1 col-sm-1 col-sm-offset-1 social-logo-container">
+                  <a href="http://www.github.com"><img src ="<%=image_url('social_github.png')%>" class="display: inline "></a>
+                </div>
+                <div class="col-md-1 col-md-offset-1 col-sm-1 col-sm-offset-1 social-logo-container">
+                  <a href="http://www.skype.com"><img src ="<%=image_url('social_skype.png')%>" class="display: inline "></a>
+                </div>
+                <div class="col-md-1 col-md-offset-1 col-sm-1 col-sm-offset-1 social-logo-container">
+                  <a href="http://www.twitter.com"><img src ="<%=image_url('social_twitter.png')%>" class="display: inline "></a>
+                </div>
+                <div class="col-md-1 col-md-offset-1 col-sm-1 col-sm-offset-1 social-logo-container">
+                  <a href="#"><img src ="<%=image_url('social_website.png')%>" class="display: inline"></a>
+                </div>
+              </div>
+            </div>
+      </div>
+</div>
+            <div class = 'row profilebody'>
+              <div class = 'col-md-10 col-md-offset-1'>
+                <h1 class = 'profpagetext'> About me </h1>
+                <br>
+                <p class = 'profpagetext paragraph'><%= @student.bio%> </p>
+                <br><br>
+                <h1 class = 'profpagetext'> Professional Interests </h1>
+                <br>
+                <p class = 'profpagetext paragraph'><%= @student.professional_interests %> </p>
+                <br><br><br>
+              </div>
+            </div>
+          <%= render partial: 'shared/footer' %>

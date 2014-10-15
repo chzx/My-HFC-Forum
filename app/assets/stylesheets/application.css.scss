@@ -1,0 +1,588 @@
+@import 'variables';
+
+$pagination-border: none;
+$pagination-color: #4b5b6b;
+$pagination-active-border: none;
+$pagination-active-color: white;
+$pagination-active-bg: none;
+$pagination-bg: transparent;
+$pagination-hover-color: white;
+$pagination-hover-bg: #4b5b6b;
+$pagination-disabled-bg: transparent;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* start landing page css */
+
+#landing-page-footer{
+  z-index: 1;
+  background-color: $almost-white;
+  position: absolute;
+  bottom:0;
+  left: 0;
+  right: 0;
+  height: auto;
+  margin-bottom:-20px;
+}
+#landing-page-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: image-url('fixed-bg.png');
+  background-size: cover;
+  background-position: bottom center;
+}
+#landing-page-footer {
+  padding-bottom: 20px;
+}
+#hfc-academy-logo {
+  width: 130px;
+  height: 130px;
+}
+#notice-icon {
+  width: 56px * 0.5;
+  height: 56px * 0.5;
+}
+#landing-page-footer {
+  .alert-icon-columns, .description-columns {
+    padding-top: 30px;
+  }
+}
+#landing-page-content {
+  .landing-page-content-row {
+    position: absolute;
+    bottom: 40%;
+  }
+}
+#landing-page-content {
+  overflow: hidden;
+}
+#landing-page-footer {
+  overflow: hidden;
+}
+
+/* end landing page css */
+
+.stupidannouncementsbox{
+  margin-top:15px;
+}
+
+
+.sidetext{
+  color:#768994;
+  margin-left:70px;
+  margin-right:auto;
+}
+
+.sidenav{
+  padding:0px;
+}
+.sidebarrows{
+  margin-left:50px;
+  margin-right:50px;
+}
+
+.activerow{
+  background-color:#f6f7f7;
+}
+.header{
+  background-color: rgb(229,76,72);
+  color:white;
+  border-left:1px solid #cccccc;
+  margin-right:-15px;
+    h1 {
+      font-family: 'open sans';
+      font-weight:300;
+      margin-left:40px;
+      color:white;
+      }
+    }
+
+  .subheader{
+      background-color: rgb(230,92,88);
+}
+.dropdown{
+  position:relative;
+    right: 50px;
+    bottom:50px;
+    height:20px;
+}
+
+/*.close-box{
+    position:relative;
+    right: 50px;
+    bottom:70px;
+    height:30px;
+}*/
+
+.close-box {
+    font-size: 40px;
+    font-weight: 100;
+    color: #fff;
+    position: relative;
+    top: 3px;
+    right: 30px;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+.filtersrow{
+  background-color:#768994;
+  text-align:center;
+  padding-bottom:15px;
+  padding-top:15px;
+
+  .vertical_border{
+    border-right: 1px solid;
+    padding-top:-20px;
+    padding-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  p{
+    color:white;
+    font-size: 16px;
+    line-height: 40px;
+    margin-top: 30px;
+    text-transform:uppercase;
+
+
+    &.allposts {
+      background-repeat: no-repeat;
+      background-size: 40px 40px;
+      padding-left:30px;
+      margin-left: 50px;
+    }
+
+    &.jobs {
+      background-repeat: no-repeat;
+      background-size: 40px 30px;
+      padding-left:40px;
+      margin-left: 50px;
+    }
+
+    &.question {
+      background-repeat: no-repeat;
+      background-size: 23px 40px;
+      padding-left:20px;
+      margin-left: 50px;
+    }
+
+    &.announcements {
+      background-repeat: no-repeat;
+      background-size: 28px 30px;
+      padding-left:50px;
+      margin-left: 50px;
+      margin-bottom:-50px;
+      background-position: 30px 0 0 30px;
+    }
+    &.allposts { background-image: image-url( "subnav_allposts.png" ); }
+    &.question { background-image: image-url( "subnav_question.png" ); }
+    &.jobs { background-image: image-url( "subnav_jobs.png" ); }
+    &.announcements { background-image: image-url( "subnav_announcements.png" ); }
+  }
+}
+
+.icon_questions, .icon_jobs, .icon_announcement{
+  height:55px;
+  margin-top:35px;
+}
+.like_button{
+  width: 50px;
+  height:60px;
+}
+
+
+.byline {
+  text-transform: uppercase;
+  .author {
+    font-weight: 700;
+    color:#4b5b6b;
+    font-size:14px;
+  }
+  .time {
+    font-size: 1em;
+    color: darken(#ccc,20%);
+  }
+}
+
+
+
+.user_post, .user_comment{
+p{
+  font-size:16px;
+  color:black;
+}}
+
+.orange{
+  background-color:#FFEAD8;
+}
+
+.notice{
+  height:45px;
+  margin-top:20px;
+}
+
+.normal_bg{
+  background-color:white;
+}
+
+.submit{
+  margin-top:30px;
+  margin-left:50px;
+  background:#4b5b6b;
+  border-radius:20px;
+  width: 100px;
+  height: 40px;
+  font-size:15px;
+  position:relative;
+  right:20px;
+  box-shadow:6px 6px 15px 0px rgba(50, 50, 50, 0.52);
+}
+
+.enterpostsubmit{
+  margin-top:10px;
+  background:white;
+  border-radius:20px;
+  width: 100px;
+  height: 40px;
+  font-size:15px;
+  color:rgb(230,92,88);
+  position:relative;
+  right:20px;
+  box-shadow:6px 6px 15px 0px rgba(50, 50, 50, 0.52);
+}
+
+.addconvo{
+  height:65px;
+  box-shadow:2px 3px 0px  #ccc inset;
+  border:none;
+  background:#ffeee0;
+  border-radius:15px;
+  font-size:15px;
+}
+
+.enterpost{
+  height:65px;
+  box-shadow:1px 2px 0px  gray inset;
+  border:none;
+  background:rgb(233,121,117);
+  border-radius:15px;
+  font-size:15px;
+}
+.enterpost::-webkit-input-placeholder {
+   color: white;
+}
+
+.enterpost:-moz-placeholder { /* Firefox 18- */
+   color: red;
+}
+
+.enterpost::-moz-placeholder {  /* Firefox 19+ */
+   color: red;
+}
+
+.enterpost:-ms-input-placeholder {
+   color: red;
+}
+
+
+.user_comment{
+  background-color:rgb(254,248,244);
+  img{
+    border-radius:100%;
+    margin-top:20px;
+    border:5px solid;
+    border-color:orange;
+  }
+}
+
+.gray_borders{
+  border-bottom:20px solid #768994;
+  margin-left: -15px;
+  margin-right:-15px;
+}
+
+/*.container-fluid {
+margin-right: auto;
+margin-left: auto;
+padding-left: 15px;
+padding-right: 0px;
+}*/
+
+.page_controls{
+  background:#768994;
+  margin-left:-15px;
+  margin-right:-15px;
+  padding-bottom:20px;
+  font-size:15px;
+}
+
+span.time{
+  color:rgb(58,73,87);
+}
+span.author{
+  color:rgb(58,73,87);
+  font-weight: bold;
+  font-size: 15px;
+}
+.pagination > li:last-child > a, .pagination > li:last-child > span{
+  color:white;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span{
+  color:white;
+}
+
+.footer{
+  background-color:#4b5b6b;
+  margin-left:-15px;
+  margin-right:-15px;
+  h3{
+    text-transform:uppercase;
+    color:white;
+    font-size: 17px;
+  }
+}
+
+.copyright{
+  color:#91a1a9;
+}
+
+.landing{
+  background-color:#ef645a;
+}
+
+.user_name{
+  font-weight:500;
+}
+
+.btn-primary{
+  background:white;
+  color:red;
+  margin-top:35px;
+}
+.selectposttype{
+  margin-top:30px;
+  color:red;
+}
+
+.profileheader{
+  background-color: rgb(229,76,72);
+}
+.profile_img{
+  margin-left: -15px;
+}
+.profilebody{
+  background-color: rgb(100,118,128);
+}
+.profpagetext{
+  color:white;
+}
+.paragraph{
+  font-size:15px;
+  font-weight:100;
+}
+.circleborder{
+  border-radius:0;
+  background-color:rgb(232,109,104);
+/*  line-height: 300%;
+  background-image: url('social_email.png');
+  background-position: 50px 100px;
+  background-repeat: no-repeat;    */
+}
+.studentheader{
+  background-color:rgb(100,118,129);
+}
+
+.classbox{
+  background-color:rgb(229,76,72);
+  padding:0;
+  min-height:250px;
+
+.classimg{
+  width:100%;
+  height:auto;
+}
+}
+.studentimg{
+  margin:0;
+  display:inline-block;
+  font-size:0;
+}
+.studentspage{
+  background-color:rgb(103,118,128);
+}
+
+.feed-post {
+  .comment-form {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  // Style the like button:
+  position: relative;
+
+  .btn-like {
+    background-image: image-url('like_inactive.png');
+    width: 35px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-size: 35px 40px;
+    border: none;
+    text-indent: -9999px;
+    background-color: transparent;
+    position: absolute;
+    right: 8.25%;
+    outline: none;
+    margin-right: 50px;
+  }
+
+  &.liked .btn-like {
+    background-image: image-url('like_active.png');
+  }
+}
+.social-logo-container{
+  img{
+      height:32px;
+      margin-bottom:15px;
+      margin-left:-6px
+      }
+  width:50px;
+  height:50px;
+  text-align:center;
+  line-height: 60px;
+  border-radius:50%;
+  background-color:rgb(232,109,104);
+  }
+
+.editbtn{
+  height:35px;
+}
+.rowofsociallogos{
+  padding-left:0;
+}
+
+.biobody{
+  background-color:rgb(126, 145, 153);
+}
+.biobody::-webkit-input-placeholder {
+   color: white;
+   padding-left: 50px;
+}
+
+.enterpost:-moz-placeholder { /* Firefox 18- */
+   color: red;
+}
+
+.enterpost::-moz-placeholder {  /* Firefox 19+ */
+   color: red;
+}
+
+.enterpost:-ms-input-placeholder {
+   color: red;
+}
+
+.btn-default {
+width: 10%;
+}
+
+.github{
+  position:relative;
+  background-image: image-url( "social_github.png" );
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-position:10px 5px;
+  padding-left:75px;
+}
+.twitter{
+  background-image: image-url( "social_twitter.png" );
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-position:10px 5px;
+  padding-left:75px;
+}
+.email{
+  background-image: image-url( "social_email.png" );
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-position:10px 5px;
+  padding-left:75px;
+}
+.website{
+  background-image: image-url( "social_website.png" );
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-position:10px 5px;
+  padding-left:75px;
+}
+.skype{
+  background-image: image-url( "social_skype.png" );
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+  background-position:10px 5px;
+  padding-left:75px;
+}
+.cancelandsubmit{
+  background-color:#647680;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.selectclassbtn{
+  color:red;
+  width:15%;
+}
+.students-page{
+  background-color:#647680;
+}
+.studentname{
+  text-transform:uppercase;
+  font-weight: 900;
+}
+.subnav img {
+  margin-right: 7px;
+}
+
+.subnav.allposts img {
+  width: 30px;
+  height: 30px;
+}
+.subnav.questions img {
+  width: 36px * 0.5;
+  height: 60px * 0.5;
+}
+.subnav.jobs img {
+  width: 60px * 0.5;
+  height: 52px * 0.5;
+}
+.subnav.announcements img {
+  width: 48px * 0.5;
+  height: 54px * 0.5;
+}
+.subnav {
+  color:white;
+}
+.profile_logo{
+  padding-top:20px;
+  padding-bottom:15px;
+  margin-top:-15px;
+}
+.sidebarcat{
+  padding:0px;
+}
+a.btn-block.text-center{
+  background-color:white;
+}
+.editnamemargin{
+  margin-right:50px;
+  width: 40%;
+}
+
+.stupidquestionicon{
+  height:36px;
+}

@@ -1,0 +1,46 @@
+<div class="col-md-2 sidenav">
+
+  <br>
+  <%= link_to root_path, :class=>'btn-block' do %>
+    <img src="<%= image_url 'forum_logo_sml.png' %>" class="img-responsive HFC_logo center-block nav-item profile">
+  <% end %>
+
+  <hr class='sidebarrows'>
+
+<div class= 'col-md-12 sidebarcat'>
+  <%= link_to profile_path, :class=>'btn-block text-center' do %>
+    <img src="<%= image_url 'nav_icon_profile.png' %>" class="img-responsive profile_logo center-block <%= 'active' if controller_name=='profile'%>">
+    PROFILE
+  <% end %>
+</div>
+
+  <!--br-->
+
+  <!--p><%#= link_to 'PROFILE', profile_path, :class=>'text-center, sidetext' %> </p-->
+  <hr class='sidebarrows'>
+
+  <%= link_to posts_path, :class=>'btn-block' do %>
+    <img src="<%= image_url 'nav_icon_feed_active.png' %>" class="img-responsive feed_logo center-block">
+    <br>
+  <% end %>
+  <!--huh?  <a href="<%#= posts_path %>" class="nav-item feed <%#= 'active' if controller_name=='posts'  %>">Feed</a>-->
+  <p><%= link_to 'FEED', posts_path, :class=>'text-center, sidetext' %> </p>
+
+  <hr class='sidebarrows'>
+
+  <%= link_to students_path, :class=>'btn-block' do %>
+    <img src="<%= image_url 'nav_icon_students.png' %>" class="img-responsive students_logo center-block">
+    <br>
+  <% end %>
+  <p><%= link_to 'STUDENTS', students_path, :class=>'text-center, sidetext' %></p>
+
+  <hr class='sidebarrows'>
+
+  <%= link_to destroy_user_session_path, :method => 'delete', :class=>'btn-block' do %>
+    <img src="<%= image_url 'nav_icon_signout.png' %>" class="img-responsive signout_logo center-block">
+    <br>
+  <% end %>
+  <p><%= link_to 'SIGN OUT', destroy_user_session_path, :method => 'delete', :class=>'text-center, sidetext' %> </p>
+
+  <hr class=sidebarrows>
+</div>

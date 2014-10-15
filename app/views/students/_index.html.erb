@@ -1,0 +1,33 @@
+<div class= 'row studentheader'>
+  <div class= 'col-md-12'>
+    <h1 class= 'profpagetext'> Student Directory
+        <%= select_tag :category,
+      options_for_select(['1.0', '2.0', '3.0']), {:prompt=>'Select Class', :class=>'form-control selectclassbtn pull-right'} %>
+  </div>
+    </h1>
+</div>
+
+
+<div class= 'row class-avatars display:inline'>
+  <div class= 'col-md-2 classbox display:inline'>
+      <img src ="<%=image_url('class_badge_600x600.png')%>" class ='img-responsive classimg display:inline'>
+  </div>
+
+  <% User.all.each do |student| %>
+
+    <%= link_to student_path(student), :class=>'col-md-2 classbox' do %>
+<!--  <div class= 'col-md-2 classbox'> -->
+    <img src ="http://placehold.it/200x200" class="img-responsive studentimg display:inline"/>
+    <h5 class ='profpagetext studentname'>
+      <%= student.first_name %>
+      <br>
+      <%= student.last_name %>
+    </h5>
+
+    <% end %>
+  <% end %>
+</div>
+
+
+
+<%= render partial: 'shared/footer' %>
